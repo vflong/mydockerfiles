@@ -11,8 +11,8 @@ RUN tar xf apache-skywalking-apm-incubating-5.0.0-beta2.tar.gz && \
     rm apache-skywalking-apm-incubating-5.0.0-beta2.tar.gz
 
 RUN tar xf elasticsearch-5.6.10.tar.gz && \
-    ln -snf elasticsearch es && \
-    rm apache-skywalking-apm-incubating-5.0.0-beta2.tar.gz
+    ln -snf elasticsearch-5.6.10 es && \
+    rm elasticsearch-5.6.10.tar.gz
 
 COPY start.sh /data
 
