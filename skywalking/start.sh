@@ -4,6 +4,8 @@
 
 set -e
 
+sed -i 's/password: admin/password: XR6G2BAByXjpAnDxHsRR/g' /data/skywalking/webapp/webapp.yml
+
 cd /data/es && nohup ./bin/elasticsearch -Ecluster.name=CollectorDBCluster -Enode.name=CollectorDBNode &> /dev/null &
 
 # ensure es is running
