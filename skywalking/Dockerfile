@@ -21,7 +21,8 @@ ENV JRE_HOME /data/jdk/jre
 ENV PATH "$PATH:$JAVA_HOME/bin"
 
 RUN groupadd -g 1000 skywalking && useradd skywalking -u 1000 -g 100 && \
-    chown -R skywalking. /data
+    chown -R skywalking. /data && \
+    chmod +x /data/start.sh
 
 USER skywalking
 
