@@ -4,8 +4,6 @@
 
 set -e
 
-ps -ef | grep java | grep -v grep | awk '{print $2}' | xargs kill -9 &>/dev/null
-
 cd /data/es && nohup ./bin/elasticsearch -Ecluster.name=CollectorDBCluster -Enode.name=CollectorDBNode &> /dev/null &
 
 # ensure es is running
@@ -15,4 +13,4 @@ echo
 
 cd /data/skywalking && ./bin/startup.sh
 
-sleep 365d
+sleep infinity
