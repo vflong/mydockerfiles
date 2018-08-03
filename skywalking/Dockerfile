@@ -25,6 +25,6 @@ RUN groupadd -g 1000 skywalking && useradd skywalking -u 1000 -g 100 && \
 
 USER skywalking
 
-EXPOSE 8080
+EXPOSE 8080 10800
 
 CMD ["/data/start.sh"]
