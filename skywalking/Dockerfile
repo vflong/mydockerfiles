@@ -28,4 +28,4 @@ USER skywalking
 
 EXPOSE 8080 10800
 
-CMD ["/data/start.sh"]
+CMD ["usr/bin/bash", "/data/start.sh"]
