@@ -10,7 +10,7 @@ sed -i "s/password: admin/password: $password/g" /data/skywalking/webapp/webapp.
 
 ip=$(ifconfig eth0 | awk '/inet/ && !/inet6/ {print $2}')
 
-cd /data/es && nohup ./bin/elasticsearch -Ecluster.name=CollectorDBCluster -Enode.name=CollectorDBNode -Enetwork.host=$ip &> /dev/null &
+cd /data/es && ./bin/elasticsearch -Ecluster.name=CollectorDBCluster -Enode.name=CollectorDBNode -Enetwork.host=$ip -d
 sed -i "s/127.0.0.1/$ip/g" /data/skywalking/webapp/webapp.yml
 sed -i "s/localhost/$ip/g" /data/skywalking/config/application.yml
 
