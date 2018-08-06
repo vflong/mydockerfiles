@@ -10,7 +10,7 @@ ENV PATH "$PATH:$JAVA_HOME/bin"
 
 RUN yum clean all && \
     yum -y install epel-release && \
-    yum -y install vim wget && \
+    yum -y install vim wget net-tools telnet && \
     rm -rf /var/cache/yum
 
 WORKDIR /data
