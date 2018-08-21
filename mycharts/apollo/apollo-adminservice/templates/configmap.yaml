@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: {{ template "apollo-adminservice.fullname" . }}
+  labels:
+    app: {{ template "apollo-adminservice.name" . }}
+    chart: "{{ .Chart.Name }}-{{ .Chart.Version }}"
+    release: "{{ .Release.Name }}"
+    heritage: "{{ .Release.Service }}"
+data:
+  application-github.properties: |-
+    # DataSource
+    spring.datasource.url = {{ .Values.env.url }}
+    spring.datasource.username = {{ .Values.env.username }}
+    spring.datasource.password = {{ .Values.env.password }}
